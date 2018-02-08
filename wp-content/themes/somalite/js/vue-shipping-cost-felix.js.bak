@@ -1,0 +1,122 @@
+var shipping_cost = new Vue({
+                el: '#cpb-shipping-cost-table',
+                data: function () {
+                    return {
+                        sbL: 0,
+                        sbW: 0,
+                        sbH: 0,
+                        sbQty: 0,
+                        selected: {text: 'USA', zone: 2, standard: 5.99, express: 29.99},
+                        options: [
+                            {text: 'Hong Kong', zone: 1, standard: 1.8, express: 19.99},
+                            {text: 'Canada', zone: 2, standard: 5.99, express: 29.99},
+                            {text: 'USA', zone: 2, standard: 5.99, express: 29.99},
+                            {text: 'China', zone: 3, standard: 3.99, express: 19.99},
+                            {text: 'Indonesia', zone: 3, standard: 3.99, express: 19.99},
+                            {text: 'Macao S.A.R.', zone: 3, standard: 3.99, express: 19.99},
+                            {text: 'Malaysia', zone: 3, standard: 3.99, express: 19.99},
+                            {text: 'Philippines', zone: 3, standard: 3.99, express: 19.99},
+                            {text: 'Singapore', zone: 3, standard: 3.99, express: 19.99},
+                            {text: 'Thailand', zone: 3, standard: 3.99, express: 19.99},
+                            {text: 'Vietnam', zone: 3, standard: 3.99, express: 19.99},
+                            {text: 'Australia', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Belgium', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Denmark', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'France', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Germany', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Ireland', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Italy', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Luxembourg', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Netherlands', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Norway', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Spain', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Sweden', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'Switzerland', zone: 4, standard: 5.99, express: 33.99},
+                            {text: 'United Kingdom', zone: 4, standard: 5.99, express: 33.99}
+                        ],
+                        show: true
+                    };
+                },
+                computed: {
+                    sPrice: function () {
+                        var uW = parseInt(this.sbL) * parseInt(this.sbH) * 0.5 * 190 / 10000 * 1.1 / 10000;
+                        var tW = uW * this.sbQty;
+                        var cost;
+
+                        if(this.selected.zone === 1) {
+                            if (tW <= 1) {
+                                cost = 0;
+                            } else if (tW > 1) {
+                                cost = 1.2 * parseInt(tW);
+                                console.log('weight:'+parseInt(tW));
+                                console.log('cost:'+cost);
+                            }
+                        }else if (this.selected.zone === 2) {
+                            if (tW <= 1) {
+                                cost = 0;
+                            } else if (tW > 1) {
+                                cost = 4 * parseInt(tW);
+                            }
+                        }else if (this.selected.zone === 3) {
+                            if (tW <= 1) {
+                                cost = 0;
+                            } else if (tW > 1) {
+                                cost = 2.6 * parseInt(tW);
+                            }
+                        }else if (this.selected.zone === 4) {
+                            if (tW <= 1) {
+                                cost = 0;
+                            } else if (tW > 1) {
+                                cost = 4 * parseInt(tW);
+                            }
+                        }
+                        
+                        var total = this.selected.standard + cost;
+                        return total.toFixed(2);
+                    },
+                    ePrice: function () {
+                        var uW = parseInt(this.sbL) * parseInt(this.sbH) * 0.5 * 190 / 10000 * 1.1 / 10000;
+                        var tW = uW * this.sbQty;
+                        var cost;
+
+                        if (this.selected.zone === 1) {
+                            if (tW <= 2) {
+                                cost = 0;
+                            } else if (tW > 2) {
+                                var intW = tW / 2;
+                                cost = 1 * parseInt(intW);
+                                console.log('E Price:' + parseInt(intW));
+                            }
+                        }else if (this.selected.zone === 2) {
+                            if (tW <= 2) {
+                                cost = 0;
+                            } else if (tW > 2) {
+                                var intW = tW / 2;
+                                cost = 1 * parseInt(intW);
+                            }
+                        }else if (this.selected.zone === 3) {
+                            if (tW <= 2) {
+                                cost = 0;
+                            } else if (tW > 2) {
+                                var intW = tW / 2;
+                                cost = 1 * parseInt(intW);
+                            }
+                        }else if (this.selected.zone === 4) {
+                            if (tW <= 2) {
+                                cost = 0;
+                            } else if (tW > 2) {
+                                var intW = tW / 2;
+                                cost = 1.8 * parseInt(intW);
+                            }
+                        }
+                        var total = this.selected.express + cost;
+                        return total.toFixed(2);
+                    },
+                    totalWeight: function () {
+                        var uW = parseInt(this.sbL) * parseInt(this.sbH) * 0.5 * 190 / 10000 * 1.1 / 10000;
+                        var tW = uW * this.sbQty;
+                        //return kg
+                        return tW.toFixed(3);
+                    }
+                }
+            })

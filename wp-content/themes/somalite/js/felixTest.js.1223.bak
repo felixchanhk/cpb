@@ -1,0 +1,227 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+$(document).ready(function () {
+    $("#btn_all").click(function () {
+        $("#test_123, #test_1234").css("display", "none");
+    });
+
+    $("#btn_sBag").click(function () {
+        $("#test_123, #test_1234").css("display", "none");
+    });
+
+    $("#btn_fBox").click(function () {
+        $("#test_123, #test_1234").css("display", "none");
+    });
+
+    $("#btn_wBox").click(function () {
+        $("#test_123, #test_1234").css("display", "none");
+    });
+
+    $("#btn_icard").click(function () {
+        $("#test_123, #test_1234").css("display", "inline-block");
+    });
+});
+
+$('#myCarousel').carousel({
+    interval: 4000,
+    cycle: true
+});
+
+// Initialize Swiper 
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 2,
+    slidesPerColumn: 2,
+    paginationClickable: true,
+    spaceBetween: 0,     
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev'
+});
+
+
+$(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+});
+
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#cpb_preview_img').css('display', 'block');
+        	$('#cpb_preview_img').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+
+function get_sku_productId() {
+    document.getElementsByTagName('iframe')[0].contentWindow.qpBuilder.saveBuilderData(function (whitelabelProjectData) {
+        //whitelabelProjectData是saveBuilderData返回的Project信息
+        //Your code here
+        var a = whitelabelProjectData;
+        var b = JSON.stringify(a, null, 4);
+    	var jsObject = JSON.parse(b);
+    	//var obj = JSON.parse(b);
+        //console.log(b);
+    	//$.post("http://47.74.226.159/cpb_uat/wp-content/themes/somalite/get_json_data.php", jsObject,function(data,status){alert("Data: " + data + "\nStatus: " + status);});
+    	$.post("http://47.74.226.159/cpb_uat/wp-content/themes/somalite/get_json_data.php", jsObject);
+    
+    	
+    	var iEditPrint = getParameterByName('iEditPrint');
+    	var iEditPaperType = getParameterByName('iEditPaperType');
+    	var iEditFinish = getParameterByName('iEditFinish');
+    	var iEditHandleType = getParameterByName('iEditHandleType');
+    	var iEditHandleColor = getParameterByName('iEditHandleColor');
+    	var iEditHandleLength = getParameterByName('iEditHandleLength');
+    	var iEditLength = getParameterByName('iEditLength');
+    	var iEditWidth = getParameterByName('iEditWidth');
+    	var iEditHeight = getParameterByName('iEditHeight');
+    	
+    	var iEditQty = getParameterByName('iEditQty');
+    
+    	window.location.href = 'http://47.74.226.159/cpb_uat/cart/?add-to-cart=738' + 
+        '&quantity=' + iEditQty + 
+        '&iEditPrint=' + iEditPrint +
+        '&iEditPaperType=' + iEditPaperType +
+        '&iEditFinish=' + iEditFinish +
+        '&iEditHandleType=' + iEditHandleType +
+        '&iEditHandleColor=' + iEditHandleColor +
+        '&iEditHandleLength=' + iEditHandleLength +
+        '&iEditLength=' + iEditLength +
+        '&iEditWidth=' + iEditWidth +
+        '&iEditHeight=' + iEditHeight;
+    });
+}
+
+
+function edit_online() {
+	
+	var nPrint = $("input:radio[name=nPrint]:checked").val();
+	var nPaperType = $("input:radio[name=nPaperType]:checked").val();
+	var nFinish = $("input:radio[name=nFinish]:checked").val();
+	var nHandleType = $("input:radio[name=nHandleType]:checked").val();
+	var nHandleColor = $("input:radio[name=nHandleColor]:checked").val();
+	var nHandleLength = $("input:radio[name=nHandleLength]:checked").val();
+	var iLength = $("input:text[id=iLength]").val();
+	var iWidth = $("input:text[id=iWidth]").val();
+	var iHeight = $("input:text[id=iHeight]").val();
+    var cpb_qty = $("#cpb_qty").val();
+	
+	document.getElementById("iEditPrint").value = nPrint;
+	document.getElementById("iEditPaperType").value = nPaperType;
+    document.getElementById("iEditFinish").value = nFinish;
+	document.getElementById("iEditHandleType").value = nHandleType;
+	document.getElementById("iEditHandleColor").value = nHandleColor;
+	document.getElementById("iEditHandleLength").value = nHandleLength;
+	document.getElementById("iEditLength").value = iLength;
+	document.getElementById("iEditWidth").value = iWidth;
+	document.getElementById("iEditHeight").value = iHeight;
+	document.getElementById("iEditQty").value = cpb_qty;
+    
+	
+	//alert(nPrint + "\n" + nFinish + "\n" + nHandleType + "\n" +  nHandleColor + "\n" + nHandleLength + "\n" + iLength + "\n" + iWidth + "\n" + iHeight + "\n" + cpb_qty);	
+}
+
+
+function cpb_validateForm(){
+	var iLength = $("input:text[id=iLength]").val();
+    if (iLength < 100 || iLength > 400) {
+        document.getElementById("check_length").style.color = 'red';
+        return false;
+    } 
+
+    var iWidth = $("input:text[id=iWidth]").val();
+    if (iWidth < 40 || iWidth > 200) {
+        document.getElementById("check_width").style.color = 'red';
+        return false;
+    } 
+
+    var iHeight = $("input:text[id=iHeight]").val();
+    if (iHeight < 100 || iWidth > 450) {
+        document.getElementById("check_height").style.color = 'red';
+        return false;
+    } 
+    
+    var L = parseInt(iLength);
+    var W = parseInt(iWidth);
+    var H = parseInt(iHeight);
+    var rule1 = W + 50;
+    var rule2 = 349 - W;
+	var rule3 = 424 - W * 0.5;
+	var rule4 = 234 - W;
+
+
+    if(2 * L + 2 * W + 19.5 + 6 <= 724){
+        if(L > rule2){
+        document.getElementById("check_length").innerHTML = "Length must be smaller than or equal to " + rule2;
+    	document.getElementById("check_length").style.color = 'red';
+        return alert('abc1');
+    	}else{
+        return alert('abc2');
+        }
+    return alert('abc3');
+	}
+
+}
+
+
+function check_not_null(){
+	
+	var iLength = $("input:text[id=iLength]").val();
+	if (iLength == "") {
+    	document.getElementById("check_length").style.color = 'red';
+    }else{
+    	document.getElementById("check_length").style.color = 'grey';
+    }
+
+	var iWidth = $("input:text[id=iWidth]").val();
+	if (iWidth == "") {
+    	document.getElementById("check_width").style.color = 'red';
+    }else{
+    	document.getElementById("check_width").style.color = 'grey';
+    }
+
+	var iHeight = $("input:text[id=iHeight]").val();
+	if (iHeight == "") {
+    	document.getElementById("check_height").style.color = 'red';       
+    }else{
+    	document.getElementById("check_height").style.color = 'grey';     
+    }
+
+}
+
+
+function leftProductColumnMouseOver(){
+    document.getElementById("swiper-container1").style.visibility = 'unset'; 
+}
+
+function leftProductColumnMouseOut(){
+    document.getElementById("swiper-container1").style.visibility = 'hidden'; 
+}
+
+function rightProductColumnMouseOver(){
+    document.getElementById("swiper-container2").style.visibility = 'unset'; 
+}
+
+function rightProductColumnMouseOut(){
+    document.getElementById("swiper-container2").style.visibility = 'hidden'; 
+}

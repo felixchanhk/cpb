@@ -1,0 +1,18 @@
+{"bindOrderNumbers": ["3082"],"orderCommnet": "paypal","lineItems": [{"productInstanceId": 352718,"qty": 1000, "comment": "felixtestproductid"}],
+            "deliveryAddress": {
+              "firstName": "felix123",
+              "lastName": "chan321",
+              "state": "NEW TERRITORIES",
+              "city": "city line",
+              "suburb": "sn",
+              "postcode": "NG801RH",
+              "streetAddress1": "address 1111",
+              "steetAddress2": "address 2222",
+              "telephone": 65431234,
+              "mobile": 65431234,
+              "emailAddress": "felixchan@qpp.com",
+              "countryCode2": "HK",
+              "countryName": "HK",
+              "sortOrder": 1
+            }
+        }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 428.4 268.3" style="enable-background:new 0 0 428.4 268.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#ED2024;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#37C6F4;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#333333;stroke-miterlimit:10;}
+	.st3{fill:#333333;}
+	.st4{font-family:'MyriadPro-Regular';}
+	.st5{font-size:17.2855px;}
+</style>
+<rect x="78.2" y="49.1" class="st0" width="272.1" height="170.1"/>
+<rect x="86.7" y="57.6" class="st1" width="255.1" height="153.1"/>
+<line class="st2" x1="86.7" y1="39.6" x2="341.8" y2="39.6"/>
+<polygon class="st3" points="93,46 93,46 86.7,39.6 93,33.2 "/>
+<polygon class="st3" points="335.4,33.2 335.4,33.2 341.8,39.6 335.4,46 "/>
+<line class="st2" x1="360.7" y1="57.6" x2="360.7" y2="210.7"/>
+<polygon class="st3" points="354.3,64 354.3,64 360.7,57.6 367,64 "/>
+<polygon class="st3" points="367,204.3 367,204.3 360.7,210.7 354.3,204.3 "/>
+<text transform="matrix(1 0 0 1 190.9333 26.8849)" class="st4 st5">90mm</text>
+<text transform="matrix(1 0 0 1 372.007 139.9587)" class="st4 st5">54mm</text>
+</svg>

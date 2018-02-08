@@ -1,0 +1,235 @@
+
+@media only screen and (max-width: 480px) {
+
+    #slider .item span{
+      height: 500px!important;
+    }
+    
+    #slider .owl-carousel .owl-item .item{
+           height: 100%;    
+    }
+
+    #slider .owl-carousel .owl-item .item .item-bg{
+      height: 500px;
+    }
+
+    #navigation .navbar-nav>.active>a{
+      box-shadow:none;
+    }
+
+    .navbar-nav{
+      width: 100%;
+    }
+
+    .subheading p{
+      width: 100%;
+    }
+
+    #slider .promo-section h1{
+      font-size: 25px;
+    }
+
+    #page-title{
+      height: auto;
+    }
+
+    #page-title p{
+      width: 100%;
+    }
+
+    #page-title h2{
+      width: 100%;
+    }
+
+    .bread-crumb p{
+      margin-bottom: 10px;
+    }
+
+    .image-services img{
+      margin: 20px 0;
+    }
+
+    .services-content{
+      margin: 20px 0;
+    }
+
+    .navbar-nav ul ul{
+      display: block !important;
+      margin-left: 20px;
+    }
+
+    .navbar-nav ul ul li:last-child{
+      border: 0;
+    }
+
+    .navbar-nav ul li.dropdown>a:after{
+      content: "\f0d7";
+      font-family: FontAwesome;
+      padding-left: 5px;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a{
+      background: #39b54a;
+    }    
+
+    #slider .caption{
+      top: 5% !important;
+    }
+
+    #slider .caption p,.promo-section p{
+      width: 100%;
+    }
+
+    .slider-buttons a{
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .owl-theme .owl-nav.disabled + .owl-dots{
+      text-align: left;
+      margin-left: 20px;
+    }    
+
+    
+}
+
+@media only screen and (min-width: 481px) and (max-width: 766px) {
+    #slider .promo-section h1{
+      font-size: 30px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .navbar-brand{
+      height: auto;
+      max-height: 70px;
+    }
+
+    #slider .caption h1{
+      font-size: 25px !important;
+    }
+
+    .navbar-toggle{
+      margin-top: 15px;
+    }
+
+    nav.navbar ul li.right{
+      float: none;
+    } 
+
+    .soma-product-search {
+      float: right;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .soma-product-search .soma-search-wrap select,.soma-product-search .soma-search-form input.search-field{
+      margin-bottom: 10px;
+    } 
+
+    .navbar-nav{
+      margin: 7.5px 0px;
+    }
+
+    .scroll-fix{
+      position: inherit !important;
+      top: 0;
+      border: 0;
+    }
+
+    p.site-description{
+      margin-bottom: 15px;
+    }
+
+    .client-image{
+      padding-top: 30px;
+    }
+
+    .blog-wrap{
+      margin-bottom: 30px;
+    } 
+
+    .hvr-underline-from-left:before{
+      background: none !important;
+    }
+
+    #navigation .navbar-nav > .active > a{
+      box-shadow: none !important;
+    } 
+
+    #wpgmza_map{
+      width: calc(100vw - 50px) !important;
+    }
+
+}
+
+@media (max-width: 780px) {
+    .team-member-section{
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 980px) {
+    .nav > li > a {
+      padding: 14px 12px;
+    }  
+
+    #testimonials #text-carousel{
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    #testimonials .content p{
+      width: 100%;
+    }
+
+    #clients .img-ar{
+      padding-top: 100px;
+    }  
+
+    .counters-wrapper .content .section-box{
+      margin-bottom: 30px;
+    }
+
+    .blog-post .meta.style2{
+      margin-top: 10px; 
+    }
+}
+
+
+@media (min-width: 768px) {
+    .dropdown:hover .dropdown-menu,
+    .btn-group:hover .dropdown-menu{
+      display: block;
+    }
+
+    .dropdown .dropdown-menu,
+    .btn-group .dropdown-menu{
+      display: none;
+    }
+
+    .navbar-right .dropdown-menu{
+      right: initial;
+      left: initial;
+    }
+}
+
+
+@media only screen and (min-width: 980px) and (max-width: 1280px) {
+    .hovereffect  a i{
+      padding: 0 5px !important;
+    }
+
+    #slider .item img{
+      width: 100%;
+      height: 100% !important;
+      background-size:cover;
+    }
+
+    #slider .item::before{
+      height: 100% !important;
+    }
+}

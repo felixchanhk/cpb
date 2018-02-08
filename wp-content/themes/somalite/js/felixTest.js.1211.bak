@@ -1,0 +1,113 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+$(document).ready(function () {
+    $("#btn_all").click(function () {
+        $("#test_123, #test_1234").css("display", "none");
+    });
+
+    $("#btn_sBag").click(function () {
+        $("#test_123, #test_1234").css("display", "none");
+    });
+
+    $("#btn_fBox").click(function () {
+        $("#test_123, #test_1234").css("display", "none");
+    });
+
+    $("#btn_wBox").click(function () {
+        $("#test_123, #test_1234").css("display", "none");
+    });
+
+    $("#btn_icard").click(function () {
+        $("#test_123, #test_1234").css("display", "inline-block");
+    });
+});
+
+$('#myCarousel').carousel({
+    interval: 4000,
+    cycle: true
+});
+
+// Initialize Swiper 
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 2,
+    slidesPerColumn: 2,
+    paginationClickable: true,
+    spaceBetween: 30,
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev'
+});
+
+function hoverImageSwiper() {
+    document.getElementById("swiper-container1").style.visibility = 'unset';
+}
+function outImageSwiper() {
+    document.getElementById("swiper-container1").style.visibility = 'hidden';
+}
+function hoverImageSwiper2() {
+    document.getElementById("swiper-container2").style.visibility = 'unset';
+}
+function outImageSwiper2() {
+    document.getElementById("swiper-container2").style.visibility = 'hidden';
+}
+
+$(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+});
+
+
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#cpb_preview_img').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+function test8899() {
+    document.getElementsByTagName('iframe')[0].contentWindow.qpBuilder.saveBuilderData(function (whitelabelProjectData) {
+        //whitelabelProjectData是saveBuilderData返回的Project信息
+        //Your code here
+        var a = whitelabelProjectData;
+        alert(JSON.stringify(a, null, 4));
+        console.log(a);
+    });
+}
+
+function edit_online() {
+	
+	var nPrint = $("input:radio[name=nPrint]:checked").val();
+	var nPaperType = $("input:radio[name=nPaperType]:checked").val();
+	var nFinish = $("input:radio[name=nFinish]:checked").val();
+	var nHandleType = $("input:radio[name=nHandleType]:checked").val();
+	var nHandleColor = $("input:radio[name=nHandleColor]:checked").val();
+	var nHandleLength = $("input:radio[name=nHandleLength]:checked").val();
+	var iLength = $("input:text[id=iLength]").val();
+	var iWidth = $("input:text[id=iWidth]").val();
+	var iHeight = $("input:text[id=iHeight]").val();
+    var cpb_qty = $("#cpb_qty").val();
+	
+	document.getElementById("iEditPrint").value = nPrint;
+	document.getElementById("iEditPaperType").value = nPaperType;
+    document.getElementById("iEditFinish").value = nFinish;
+	document.getElementById("iEditHandleType").value = nHandleType;
+	document.getElementById("iEditHandleColor").value = nHandleColor;
+	document.getElementById("iEditHandleLength").value = nHandleLength;
+	document.getElementById("iEditLength").value = iLength;
+	document.getElementById("iEditWidth").value = iWidth;
+	document.getElementById("iEditHeight").value = iHeight;
+	document.getElementById("iEditQty").value = cpb_qty;
+    
+	
+	alert(nPrint + "\n" + nFinish + "\n" + nHandleType + "\n" +  nHandleColor + "\n" + nHandleLength + "\n" + iLength + "\n" + iWidth + "\n" + iHeight + "\n" + cpb_qty);	
+}

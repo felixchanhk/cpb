@@ -1,0 +1,22 @@
+
+
+/**
+ * AUTO COMPLETE PAID ORDERS IN WOOCOMMERCE
+ *
+add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_paid_order', 90, 1 );
+function custom_woocommerce_auto_complete_paid_order( $order_id ) {
+  if ( ! $order_id )
+    return;
+
+  $order = wc_get_order( $order_id );
+
+  // No updated status for orders delivered with Bank wire, Cash on delivery and Cheque payment methods.
+  if ( ( 'bacs' == get_post_meta($order_id, '_payment_method', true) ) || ( 'cod' == get_post_meta($order_id, '_payment_method', true) ) || ( 'cheque' == get_post_meta($order_id, '_payment_method', true) ) ) {
+    return;
+  } 
+  // "completed" updated status for paid Orders with all others payment methods
+  else {
+    $order->update_status( 'completed' );
+  }
+}
+/

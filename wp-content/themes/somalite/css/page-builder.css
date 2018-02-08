@@ -1,0 +1,17 @@
+/*-- Page builder css --*/
+
+.panel-grid.panel-no-style{
+	margin-bottom: 0 !important;
+}
+
+.panel-grid.panel-has-style{
+	margin-bottom: 0 !important;
+}
+
+.panel-grid .panel-row-style{
+	width:100%;
+}
+
+.panel-grid .panel-grid-cell{
+	display: inline-block;	
+}
