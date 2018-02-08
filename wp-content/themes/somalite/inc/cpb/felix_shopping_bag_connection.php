@@ -740,7 +740,7 @@ function edit_online_now_link() {
     }
 
     if($sku === 'MDSB7569'){	
-    $form_html .= '<a class="download_diecut" href="http://47.52.24.242/GenFormat/GenSVG/StandardName/DRD008182FrontBuilder01/Palette/All/Length/110/Width/100/Depth/150/" target="_blank" download><button class="download_diecut_link">Download Diecut</button></a><br>';
+    $form_html .= '<a class="download_diecut" :href="download_diecut_url" target="_blank" download><button class="download_diecut_link">Download Diecut</button></a><br>';
     $form_html .= '<a class="cpb_delivery_options" href="' .  get_home_url() . '/shipping-and-devlivery/" target="_blank">See delivery options>></a>';
     $form_html .= '<p class="cpb_reminder_text">We provide dieline templates to our registered member for free download. If you are a more advanced user, download your custom die line and edit offline with Adobe® Illustrator® then upload your finished artwork.<p></div></div>';
     $form_html .= '<a class="cpb_custome_qoute" href="' .  get_home_url() . '/contact-us/">Custom Qoute</a>';
